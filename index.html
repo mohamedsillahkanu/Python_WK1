@@ -3,189 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malaria Data Analysis Course - Python Version</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        h1, h2, h3, h4 {
-            color: #2c3e50;
-        }
-        
-        h1 {
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            margin-top: 30px;
-        }
-        
-        h2 {
-            margin-top: 25px;
-            border-left: 4px solid #3498db;
-            padding-left: 10px;
-        }
-        
-        h3 {
-            margin-top: 20px;
-            color: #2980b9;
-        }
-        
-        hr {
-            border: 0;
-            height: 1px;
-            background: #ddd;
-            margin: 20px 0;
-        }
-        
-        code {
-            font-family: 'Courier New', monospace;
-            background-color: #f5f5f5;
-            padding: 2px 4px;
-            border-radius: 3px;
-            font-size: 90%;
-        }
-        
-        .python-code {
-            background-color: #f8f8f8;
-            border-left: 4px solid #3498db;
-            padding: 10px 15px;
-            margin: 15px 0;
-            overflow-x: auto;
-            font-family: 'Courier New', monospace;
-            line-height: 1.4;
-        }
-        
-        .explanation {
-            background-color: #f0f7fb;
-            border-left: 4px solid #5bc0de;
-            padding: 10px 15px;
-            margin: 15px 0;
-        }
-        
-        .sidebar {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 250px;
-            height: 100%;
-            background: #2c3e50;
-            color: #ecf0f1;
-            padding: 20px;
-            overflow-y: auto;
-            transition: transform 0.3s ease;
-            z-index: 100;
-        }
-        
-        .sidebar.closed {
-            transform: translateX(-100%);
-        }
-        
-        .sidebar h3 {
-            color: #ecf0f1;
-            margin-top: 0;
-        }
-        
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        .sidebar a {
-            color: #ecf0f1;
-            text-decoration: none;
-            display: block;
-            padding: 8px 0;
-        }
-        
-        .sidebar a:hover {
-            color: #3498db;
-        }
-        
-        .sub-menu {
-            padding-left: 20px;
-        }
-        
-        .sidebar-toggle {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            z-index: 101;
-            display: none;
-        }
-        
-        .table-container {
-            overflow-x: auto;
-            margin: 20px 0;
-        }
-        
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        th {
-            background-color: #f2f2f2;
-            font-weight: bold;
-        }
-        
-        tr:hover {
-            background-color: #f5f5f5;
-        }
-        
-        .exercise-section, .solution-section {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin: 20px 0;
-            padding: 20px;
-        }
-        
-        .exercise-section h2, .solution-section h2 {
-            margin-top: 0;
-        }
-        
-        @media (max-width: 768px) {
-            .sidebar {
-                transform: translateX(-100%);
-            }
-            
-            .sidebar.open {
-                transform: translateX(0);
-            }
-            
-            .sidebar-toggle {
-                display: block;
-            }
-            
-            .container {
-                margin-left: 0;
-                width: 100%;
-            }
-        }
-    </style>
+    <title>Malaria Data Analysis Course</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <button class="sidebar-toggle" id="sidebar-toggle">Menu</button>
@@ -198,7 +17,7 @@
                 <ul class="sub-menu">
                     <li><a href="#install">Installing Python & Jupyter</a></li>
                     <li><a href="#syntax">Basic Python Syntax</a></li>
-                    <li><a href="#jupyter">Jupyter Notebooks</a></li>
+                    <li><a href="#markdown">Jupyter Notebooks</a></li>
                     <li><a href="#datasets">Reading Datasets</a></li>
                 </ul>
             </li>
@@ -206,7 +25,7 @@
                 <a href="#exercises">📌 Week 1: Exercises</a>
                 <ul class="sub-menu">
                     <li><a href="#ex-syntax">Basic Syntax Exercises</a></li>
-                    <li><a href="#ex-jupyter">Jupyter Notebook Exercises</a></li>
+                    <li><a href="#ex-markdown">Jupyter Exercises</a></li>
                     <li><a href="#ex-data">Data Reading Exercises</a></li>
                     <li><a href="#ex-bonus">Bonus Challenge</a></li>
                 </ul>
@@ -215,7 +34,7 @@
                 <a href="#solutions">📌 Week 1: Solutions</a>
                 <ul class="sub-menu">
                     <li><a href="#sol-syntax">Syntax Solutions</a></li>
-                    <li><a href="#sol-jupyter">Jupyter Solutions</a></li>
+                    <li><a href="#sol-markdown">Jupyter Solutions</a></li>
                     <li><a href="#sol-data">Data Solutions</a></li>
                     <li><a href="#sol-bonus">Bonus Solution</a></li>
                 </ul>
@@ -227,46 +46,44 @@
         <h1 id="week1">📅 Week 1: Introduction to Python & Jupyter for Malaria Data Analysis</h1>
         
         <p>This week, we will:<br>
-        ✅ <strong>Set up Python and Jupyter Notebook</strong><br>
+        ✅ <strong>Set up Python and Jupyter</strong><br>
         ✅ <strong>Learn basic Python syntax</strong><br>
         ✅ <strong>Use Jupyter Notebooks for documentation</strong><br>
         ✅ <strong>Read malaria datasets (CSV, Excel) into Python step by step</strong></p>
         
         <hr>
         
-        <h2 id="install">1️⃣ Installing Python and Jupyter Notebook</h2>
+        <h2 id="install">1️⃣ Installing Python and Jupyter</h2>
         
         <h3>Why Use Python and Jupyter?</h3>
         <p>✔ <strong>Python</strong> is a powerful language for <strong>data analysis, statistics, and visualization</strong>.<br>
-        ✔ <strong>Jupyter Notebook</strong> makes working with Python easier by providing an interactive interface.</p>
+        ✔ <strong>Jupyter</strong> makes working with Python easier by providing an interactive notebook interface.</p>
         
-        <h3>Step 1: Install Python with Anaconda</h3>
+        <h3>Step 1: Install Python</h3>
         <ol>
-            <li>Go to <a href="https://www.anaconda.com/products/distribution" target="_blank">Anaconda Distribution</a></li>
-            <li>Download and install Anaconda for your operating system</li>
-            <li>This includes Python and most packages you'll need</li>
+            <li>Go to <a href="https://www.python.org/downloads/" target="_blank">Python.org</a></li>
+            <li>Download and install Python for your operating system</li>
         </ol>
         
-        <h3>Step 2: Launch Jupyter Notebook</h3>
+        <h3>Step 2: Install Anaconda (Recommended)</h3>
         <ol>
-            <li>Open <strong>Anaconda Navigator</strong></li>
-            <li>Click on the <strong>Jupyter Notebook</strong> launch button</li>
-            <li>Alternatively, open a terminal/command prompt and type: <code>jupyter notebook</code></li>
+            <li>Go to <a href="https://www.anaconda.com/products/distribution" target="_blank">Anaconda</a></li>
+            <li>Download <strong>Anaconda Distribution</strong> and install it</li>
         </ol>
         
-        <h3>Step 3: Exploring Jupyter Notebook</h3>
+        <h3>Step 3: Open Jupyter Notebook</h3>
         <p>When you open Jupyter Notebook, you'll see:<br>
-        📌 <strong>File Browser</strong> – Navigate to your files<br>
-        📌 <strong>New Notebook</strong> – Create new Python notebooks<br>
-        📌 <strong>Running</strong> – View running notebooks<br>
-        📌 <strong>Code/Markdown Cells</strong> – Write code and documentation</p>
+        📌 <strong>Code Cells</strong> – Write and run Python code interactively<br>
+        📌 <strong>Markdown Cells</strong> – Write and format documentation<br>
+        📌 <strong>Output Area</strong> – View results of your code<br>
+        📌 <strong>File Browser</strong> – Navigate and manage your files</p>
         
         <hr>
         
         <h2 id="syntax">2️⃣ Basic Python Syntax</h2>
         
         <h3>Step 1: Assigning Variables</h3>
-        <div class="python-code">
+        <div class="r-code">
             <code>
 cases = 150          # Number of malaria cases<br>
 fatality_rate = 4.2  # Fatality rate in percentage<br>
@@ -286,26 +103,26 @@ outbreak = True      # Logical value (Boolean)
         <hr>
         
         <h3>Step 2: Checking Data Types</h3>
-        <div class="python-code">
+        <div class="r-code">
             <code>
-type(cases)          # Output: <class 'int'><br>
-type(region)         # Output: <class 'str'><br>
-type(outbreak)       # Output: <class 'bool'>
+type(cases)          # Output: &lt;class 'int'&gt;<br>
+type(region)         # Output: &lt;class 'str'&gt;<br>
+type(outbreak)       # Output: &lt;class 'bool'&gt;
             </code>
         </div>
         
         <div class="explanation">
             <h4>🔍 Explanation:</h4>
             <p>✔ <code>type()</code> function shows the data type of each variable<br>
-            ✔ <code>'int'</code> means integer numbers<br>
-            ✔ <code>'str'</code> means text strings<br>
+            ✔ <code>'int'</code> and <code>'float'</code> mean numbers<br>
+            ✔ <code>'str'</code> means text<br>
             ✔ <code>'bool'</code> means <strong>True or False</strong></p>
         </div>
         
         <hr>
         
         <h3>Step 3: Basic Operators</h3>
-        <div class="python-code">
+        <div class="r-code">
             <code>
 total_cases = cases + 50   # Adding 50 more cases<br>
 fatalities = cases * (fatality_rate / 100)  # Calculating fatalities<br>
@@ -322,56 +139,54 @@ recovered = cases - fatalities  # Subtracting fatalities from total cases
         
         <hr>
         
-        <h2 id="jupyter">3️⃣ Jupyter Notebooks for Documentation</h2>
+        <h2 id="markdown">3️⃣ Jupyter Notebooks for Documentation</h2>
         
-        <h3>What is Jupyter Notebook?</h3>
-        <p>📌 <strong>Jupyter Notebook</strong> lets you create <strong>interactive documents</strong> with <strong>text, Python code, and results</strong> in one place.</p>
+        <h3>What are Jupyter Notebooks?</h3>
+        <p>📌 <strong>Jupyter Notebooks</strong> let you create <strong>reports, notebooks, and presentations</strong> with <strong>text, Python code, and results</strong> in one document.</p>
         
-        <h3>Step 1: Create a New Notebook</h3>
-        <ol>
-            <li>In the Jupyter home page, click <strong>New → Python 3</strong></li>
-            <li>A new notebook will open with an empty code cell</li>
-        </ol>
+        <h3>Step 1: Start Jupyter Notebook</h3>
+        <div class="r-code">
+            <code>
+# From command line or Anaconda Navigator<br>
+jupyter notebook
+            </code>
+        </div>
         
         <div class="explanation">
             <h4>🔍 Explanation:</h4>
-            <p>✔ Jupyter notebooks have file extension <code>.ipynb</code><br>
-            ✔ Notebooks contain cells for code and markdown (documentation)</p>
+            <p>✔ This command starts the Jupyter Notebook server and opens a browser window</p>
         </div>
         
         <hr>
         
-        <h3>Step 2: Using Code and Markdown Cells</h3>
-        <p><strong>Code cells</strong> - For Python code:</p>
-        <div class="python-code">
-            <code>
-# This is a code cell<br>
-import pandas as pd<br>
-import numpy as np<br>
-<br>
-cases = 150<br>
-print(f"Total cases: {cases}")
-            </code>
-        </div>
+        <h3>Step 2: Create a New Notebook</h3>
+        <ol>
+            <li>Click <strong>New</strong> and select <strong>Python 3</strong></li>
+            <li>Use <strong>File → Rename</strong> to name your notebook</li>
+        </ol>
         
-        <p><strong>Markdown cells</strong> - For documentation (change cell type to Markdown):</p>
-        <div class="python-code">
+        <hr>
+        
+        <h3>Step 3: Writing in Jupyter Notebook</h3>
+        <div class="r-code">
             <code>
-# Malaria Data Analysis<br>
-<br>
-This notebook presents an analysis of malaria cases.<br>
-<br>
-## Data Summary<br>
-<br>
-The total number of cases is 150.
+# In markdown cell:<br>
+# Malaria Data Analysis<br><br>
+
+This document presents an analysis of malaria cases.<br><br>
+
+# In code cell:<br>
+import statistics<br>
+statistics.mean(cases)  # Shows mean of 'cases' if it's a list
             </code>
         </div>
         
         <div class="explanation">
             <h4>🔍 Explanation:</h4>
-            <p>✔ Switch between cell types using the dropdown menu or keyboard shortcuts<br>
-            ✔ Run cells with Shift+Enter<br>
-            ✔ Markdown supports headers (#, ##), lists (*, -), emphasis (**bold**), and other formatting</p>
+            <p>✔ <code>#</code> starts a <strong>comment</strong> in code cells<br>
+            ✔ <code>statistics.mean(cases)</code> calculates <strong>mean of values</strong> in <code>cases</code> if it's a list<br>
+            ✔ Text in Markdown cells is formatted as rich text</p>
+            <p>📌 Click <strong>Run</strong> in Jupyter Notebook to execute a code cell.</p>
         </div>
         
         <hr>
@@ -384,27 +199,26 @@ The total number of cases is 150.
         
         <hr>
         
-        <h3>Step 1: Install Required Package</h3>
-        <div class="python-code">
+        <h3>Step 1: Install Required Packages</h3>
+        <div class="r-code">
             <code>
-# In a Jupyter cell or terminal<br>
-!pip install pandas   # Install pandas package for data handling<br>
-!pip install openpyxl  # For Excel support
+pip install pandas       # Install pandas package for data analysis<br>
+pip install openpyxl     # Install openpyxl package for Excel files
             </code>
         </div>
         
         <div class="explanation">
             <h4>🔍 Explanation:</h4>
-            <p>✔ If you installed Anaconda, pandas is already installed<br>
-            ✔ <code>openpyxl</code> allows pandas to read Excel files</p>
+            <p>✔ <code>pip install pandas</code> installs <code>pandas</code> (for data analysis)<br>
+            ✔ <code>pip install openpyxl</code> installs <code>openpyxl</code> (for Excel support)</p>
         </div>
         
         <hr>
         
         <h3>📂 4.1 Reading CSV Files with <code>pandas</code></h3>
-        <div class="python-code">
+        <div class="r-code">
             <code>
-import pandas as pd  # Import pandas library<br><br>
+import pandas as pd  # Load pandas package<br><br>
 
 # Read malaria data from a CSV file<br>
 malaria_data = pd.read_csv("malaria_cases.csv")<br><br>
@@ -416,7 +230,7 @@ malaria_data.head()
         
         <div class="explanation">
             <h4>🔍 Explanation:</h4>
-            <p>✔ <code>import pandas as pd</code> imports the <strong>pandas</strong> library with alias 'pd'<br>
+            <p>✔ <code>import pandas as pd</code> loads the <strong><code>pandas</code></strong> package with alias <code>pd</code><br>
             ✔ <code>pd.read_csv("malaria_cases.csv")</code> reads the CSV file into a <strong>DataFrame</strong><br>
             ✔ <code>malaria_data</code> stores the <strong>imported dataset</strong><br>
             ✔ <code>malaria_data.head()</code> shows the <strong>first 5 rows</strong> of the dataset</p>
@@ -425,9 +239,9 @@ malaria_data.head()
         <hr>
         
         <h3>📂 4.2 Reading Excel Files with <code>pandas</code></h3>
-        <div class="python-code">
+        <div class="r-code">
             <code>
-import pandas as pd  # Import pandas library<br><br>
+import pandas as pd  # Load pandas package<br><br>
 
 # Read malaria data from an Excel file<br>
 malaria_data_excel = pd.read_excel("malaria_cases.xlsx", sheet_name=0)<br><br>
@@ -439,7 +253,7 @@ malaria_data_excel.head()
         
         <div class="explanation">
             <h4>🔍 Explanation:</h4>
-            <p>✔ <code>pd.read_excel("malaria_cases.xlsx", sheet_name=0)</code> reads the first sheet (index 0)<br>
+            <p>✔ <code>pd.read_excel("malaria_cases.xlsx", sheet_name=0)</code> reads the <strong>first sheet</strong> of the Excel file<br>
             ✔ <code>malaria_data_excel</code> stores the <strong>imported dataset</strong><br>
             ✔ <code>malaria_data_excel.head()</code> shows the <strong>first 5 rows</strong></p>
         </div>
@@ -449,7 +263,7 @@ malaria_data_excel.head()
         <h3>📌 4.3 Writing Data to CSV and Excel</h3>
         
         <h4>Saving as CSV</h4>
-        <div class="python-code">
+        <div class="r-code">
             <code>
 malaria_data.to_csv("cleaned_malaria_data.csv", index=False)
             </code>
@@ -457,14 +271,13 @@ malaria_data.to_csv("cleaned_malaria_data.csv", index=False)
         
         <div class="explanation">
             <h4>🔍 Explanation:</h4>
-            <p>✔ <code>malaria_data.to_csv("cleaned_malaria_data.csv", index=False)</code> saves <strong><code>malaria_data</code></strong> as a CSV file<br>
-            ✔ <code>index=False</code> prevents writing row numbers as a separate column</p>
+            <p>✔ <code>malaria_data.to_csv("cleaned_malaria_data.csv", index=False)</code> saves <strong><code>malaria_data</code></strong> as a CSV file without the index column</p>
         </div>
         
         <hr>
         
         <h4>Saving as Excel</h4>
-        <div class="python-code">
+        <div class="r-code">
             <code>
 malaria_data.to_excel("cleaned_malaria_data.xlsx", index=False)
             </code>
@@ -472,14 +285,14 @@ malaria_data.to_excel("cleaned_malaria_data.xlsx", index=False)
         
         <div class="explanation">
             <h4>🔍 Explanation:</h4>
-            <p>✔ <code>malaria_data.to_excel("cleaned_malaria_data.xlsx", index=False)</code> saves data as an <strong>Excel file</strong></p>
+            <p>✔ <code>malaria_data.to_excel("cleaned_malaria_data.xlsx", index=False)</code> saves data as an <strong>Excel file</strong> without the index column</p>
         </div>
         
         <hr>
         
         <h2>✅ Summary of Week 1</h2>
         <p>By the end of this week, you should:<br>
-        ✔ <strong>Install Python and Jupyter Notebook</strong><br>
+        ✔ <strong>Install Python and Jupyter</strong><br>
         ✔ <strong>Understand basic Python syntax</strong> (variables, operators)<br>
         ✔ <strong>Use Jupyter Notebooks for documentation</strong><br>
         ✔ <strong>Read and write malaria datasets (CSV, Excel)</strong></p>
@@ -528,37 +341,33 @@ malaria_data.to_excel("cleaned_malaria_data.xlsx", index=False)
                 <code>recovered = total_cases - fatalities</code></li>
             </ol>
             
-            <p>✍ <strong>Write the Python code to calculate these values and print the results.</strong></p>
+            <p>✍ <strong>Write the Python code to calculate these values.</strong></p>
         </div>
         
         <div class="exercise-section">
-            <h2 id="ex-jupyter">2️⃣ Using Jupyter Notebook</h2>
+            <h2 id="ex-markdown">2️⃣ Using Jupyter Notebooks</h2>
             
-            <h3>Exercise 2.1: Create a Jupyter Notebook</h3>
-            <ol>
-                <li><strong>Launch Jupyter Notebook</strong> from Anaconda Navigator or terminal</li>
-                <li><strong>Create a new notebook</strong> named <code>malaria_analysis.ipynb</code></li>
-            </ol>
+            <h3>Exercise 2.1: Start Jupyter Notebook</h3>
+            <p>🔹 <strong>Write the command to start Jupyter Notebook from the command line.</strong></p>
             
             <hr>
             
-            <h3>Exercise 2.2: Add Code and Markdown Cells</h3>
+            <h3>Exercise 2.2: Create a Jupyter Notebook</h3>
             <ol>
-                <li><strong>Create a markdown cell</strong> with the title "Malaria Data Analysis"</li>
-                <li><strong>Add a brief introduction</strong> about malaria in the same markdown cell</li>
-                <li><strong>Create a code cell</strong> that defines the variables from Exercise 1.1</li>
-                <li><strong>Create another code cell</strong> that calculates fatalities and recovered cases</li>
-                <li><strong>Add a markdown cell</strong> that explains your calculations</li>
+                <li><strong>In Jupyter</strong>, click <strong>New → Python 3</strong></li>
+                <li><strong>Rename</strong> the notebook to <strong>"Malaria Data Analysis"</strong></li>
+                <li><strong>Write a short summary</strong> about malaria cases in a Markdown cell</li>
+                <li><strong>Include a Python code cell</strong> that displays the summary of <code>total_cases</code></li>
             </ol>
             
-            <p>✍ <strong>Create your first Jupyter notebook!</strong></p>
+            <p>✍ <strong>Follow the steps and create your first Jupyter Notebook!</strong></p>
         </div>
         
         <div class="exercise-section">
             <h2 id="ex-data">3️⃣ Reading and Writing Data (CSV, Excel)</h2>
             
-            <h3>Exercise 3.1: Import Required Library</h3>
-            <p>🔹 <strong>Write the Python code to import the pandas library.</strong></p>
+            <h3>Exercise 3.1: Install and Import Pandas</h3>
+            <p>🔹 <strong>Write the Python commands to install and import <code>pandas</code>.</strong></p>
             
             <hr>
             
@@ -600,7 +409,7 @@ malaria_data.to_excel("cleaned_malaria_data.xlsx", index=False)
             
             <p><strong>Write the Python code to:</strong></p>
             <ol>
-                <li>Import the <strong>pandas</strong> library</li>
+                <li>Import <strong><code>pandas</code></strong></li>
                 <li>Read the <strong>CSV file</strong> into a DataFrame called <code>malaria_df</code></li>
                 <li>Display the <strong>first 5 rows</strong> of the DataFrame</li>
             </ol>
@@ -610,6 +419,7 @@ malaria_data.to_excel("cleaned_malaria_data.xlsx", index=False)
             <h3>Exercise 3.3: Read an Excel File</h3>
             <p>If the same data is in <strong><code>malaria_data.xlsx</code> (Sheet 1)</strong>, <strong>write the Python code</strong> to:</p>
             <ol>
+                <li>Import <strong><code>pandas</code></strong> (if not already imported)</li>
                 <li>Read the <strong>Excel file</strong> into a DataFrame called <code>malaria_excel_df</code></li>
                 <li>Display the <strong>first 5 rows</strong></li>
             </ol>
@@ -627,16 +437,16 @@ malaria_data.to_excel("cleaned_malaria_data.xlsx", index=False)
         </div>
         
         <div class="exercise-section">
-            <h2 id="ex-bonus">4️⃣ Bonus Challenge: Analyze Malaria Data</h2>
+            <h2 id="ex-bonus">4️⃣ Bonus Challenge: Automate CSV Import</h2>
             <p>🔹 <strong>Write a Python script that:</strong></p>
             <ol>
-                <li>Reads a malaria dataset from CSV</li>
-                <li>Calculates summary statistics (mean, median, max for cases)</li>
-                <li>Creates a new column showing recovery rate (Recovered/Cases × 100)</li>
-                <li>Saves the enriched dataset as a new CSV file</li>
+                <li><strong>Asks the user</strong> for a CSV file path</li>
+                <li><strong>Loads the dataset</strong></li>
+                <li><strong>Displays summary statistics</strong></li>
+                <li><strong>Saves the cleaned dataset as a new CSV file</strong></li>
             </ol>
             
-            <p>📌 <strong>Hint:</strong> Use <code>pandas</code> methods like <code>describe()</code>, <code>mean()</code>, and arithmetic operations on DataFrame columns.</p>
+            <p>📌 <strong>Hint:</strong> Use <code>pd.read_csv()</code>, <code>describe()</code>, and <code>to_csv()</code>.</p>
             
             <h3>💡 What's Next?</h3>
             <p>✔ Try these exercises in Jupyter Notebook<br>
@@ -655,7 +465,7 @@ malaria_data.to_excel("cleaned_malaria_data.xlsx", index=False)
             <h2 id="sol-syntax">1️⃣ Basic Python Syntax and Operations</h2>
             
             <h3>Exercise 1.1: Assign Values</h3>
-            <div class="python-code">
+            <div class="r-code">
                 <code>
 # Assigning values to variables<br>
 total_cases = 500<br>
@@ -668,13 +478,13 @@ outbreak = True
             <hr>
             
             <h3>Exercise 1.2: Check Data Types</h3>
-            <div class="python-code">
+            <div class="r-code">
                 <code>
 # Check the data types of the variables<br>
-print(type(total_cases))     # <class 'int'><br>
-print(type(fatality_rate))   # <class 'float'><br>
-print(type(region))          # <class 'str'><br>
-print(type(outbreak))        # <class 'bool'>
+print(type(total_cases))     # int<br>
+print(type(fatality_rate))   # float<br>
+print(type(region))          # str<br>
+print(type(outbreak))        # bool
                 </code>
             </div>
             
@@ -686,94 +496,84 @@ print(type(outbreak))        # <class 'bool'>
             <hr>
             
             <h3>Exercise 1.3: Perform Calculations</h3>
-            <div class="python-code">
+            <div class="r-code">
                 <code>
 # Calculating fatalities and recovered cases<br>
 fatalities = total_cases * (fatality_rate / 100)<br>
 recovered = total_cases - fatalities<br>
 <br>
 # Displaying the results<br>
-print(f"Total cases: {total_cases}")<br>
-print(f"Fatality rate: {fatality_rate}%")<br>
-print(f"Estimated fatalities: {fatalities:.1f}")<br>
-print(f"Recovered cases: {recovered:.1f}")
+print(fatalities)<br>
+print(recovered)
                 </code>
             </div>
             
             <div class="explanation">
                 <h4>Explanation:</h4>
                 <p>- The formula for fatalities is <code>total_cases * (fatality_rate / 100)</code>.<br>
-                - The formula for recovered cases is <code>total_cases - fatalities</code>.<br>
-                - We use f-strings to format the output with <code>{variable:.1f}</code> for one decimal place.</p>
+                - The formula for recovered cases is <code>total_cases - fatalities</code>.</p>
             </div>
         </div>
         
         <div class="solution-section">
-            <h2 id="sol-jupyter">2️⃣ Using Jupyter Notebook</h2>
+            <h2 id="sol-markdown">2️⃣ Using Jupyter Notebooks</h2>
             
-            <h3>Exercise 2.1 & 2.2: Create Jupyter Notebook with Cells</h3>
-            <p>Here's the content you would create in your Jupyter notebook:</p>
-            
-            <p><strong>Markdown Cell:</strong></p>
-            <div class="python-code">
+            <h3>Exercise 2.1: Start Jupyter Notebook</h3>
+            <div class="r-code">
                 <code>
-# Malaria Data Analysis
-
-## Introduction
-Malaria is a mosquito-borne infectious disease that affects humans and other animals. It is caused by parasitic protozoans belonging to the Plasmodium genus. This notebook analyzes malaria case data to understand patterns and trends.
+# In command line or terminal<br>
+jupyter notebook
                 </code>
             </div>
             
-            <p><strong>Code Cell 1:</strong></p>
-            <div class="python-code">
+            <hr>
+            
+            <h3>Exercise 2.2: Create a Jupyter Notebook</h3>
+            
+            <p>1. Open Jupyter and click <strong>New → Python 3</strong>.<br>
+            2. Use <strong>File → Rename</strong> to rename it to "Malaria Data Analysis".<br>
+            3. Create a Markdown cell with the following content:</p>
+            
+            <div class="r-code">
                 <code>
-# Define variables for malaria analysis
-total_cases = 500
-fatality_rate = 3.5
-region = "North"
-outbreak = True
-
-# Display the variables
-print(f"Region: {region}")
-print(f"Total cases: {total_cases}")
-print(f"Fatality rate: {fatality_rate}%")
-print(f"Outbreak status: {outbreak}")
+# Malaria Data Summary<br>
+<br>
+## Malaria Cases Summary<br>
+<br>
+The total malaria cases in the region are 500.<br>
+The fatality rate is 3.5%.<br>
+The total fatalities are calculated below.
                 </code>
             </div>
             
-            <p><strong>Code Cell 2:</strong></p>
-            <div class="python-code">
+            <p>4. Create a code cell with the following content:</p>
+            
+            <div class="r-code">
                 <code>
-# Calculate fatalities and recovered cases
-fatalities = total_cases * (fatality_rate / 100)
-recovered = total_cases - fatalities
-
-# Display results
+# Calculate summary statistics for total_cases<br>
+total_cases = 500<br>
+fatality_rate = 3.5<br>
+<br>
+fatalities = total_cases * (fatality_rate / 100)<br>
+print(f"Total cases: {total_cases}")<br>
+print(f"Fatality rate: {fatality_rate}%")<br>
 print(f"Estimated fatalities: {fatalities:.1f}")
-print(f"Recovered cases: {recovered:.1f}")
                 </code>
             </div>
             
-            <p><strong>Markdown Cell 2:</strong></p>
-            <div class="python-code">
-                <code>
-## Calculation Explanation
-
-- **Fatalities**: Calculated by multiplying the total cases by the fatality rate (converted to decimal)
-- **Recovered cases**: Calculated by subtracting fatalities from total cases
-
-The analysis shows that out of {total_cases} cases, approximately {fatalities:.1f} resulted in fatalities, with {recovered:.1f} patients recovering.
-                </code>
-            </div>
+            <p>5. Run the cells by clicking the <strong>Run</strong> button.</p>
         </div>
         
         <div class="solution-section">
             <h2 id="sol-data">3️⃣ Reading and Writing Data (CSV, Excel)</h2>
             
-            <h3>Exercise 3.1: Import Required Library</h3>
-            <div class="python-code">
+            <h3>Exercise 3.1: Install and Import Pandas</h3>
+            <div class="r-code">
                 <code>
-# Import pandas library for data manipulation
+# In command line or terminal<br>
+pip install pandas<br>
+<br>
+# In Python or Jupyter Notebook<br>
 import pandas as pd
                 </code>
             </div>
@@ -781,15 +581,15 @@ import pandas as pd
             <hr>
             
             <h3>Exercise 3.2: Read a CSV File</h3>
-            <div class="python-code">
+            <div class="r-code">
                 <code>
-# Import pandas
-import pandas as pd
-
-# Read the CSV file into a DataFrame
-malaria_df = pd.read_csv("malaria_data.csv")
-
-# Display the first 5 rows
+# Importing pandas<br>
+import pandas as pd<br>
+<br>
+# Reading the CSV file into a DataFrame<br>
+malaria_df = pd.read_csv("malaria_data.csv")<br>
+<br>
+# Displaying the first 5 rows of the DataFrame<br>
 malaria_df.head()
                 </code>
             </div>
@@ -797,18 +597,21 @@ malaria_df.head()
             <div class="explanation">
                 <h4>Explanation:</h4>
                 <p>- <code>pd.read_csv()</code> reads CSV files into a DataFrame.<br>
-                - <code>head()</code> displays the first 5 rows by default.</p>
+                - <code>head()</code> displays the first 5 rows of the DataFrame.</p>
             </div>
             
             <hr>
             
             <h3>Exercise 3.3: Read an Excel File</h3>
-            <div class="python-code">
+            <div class="r-code">
                 <code>
-# Read the Excel file into a DataFrame
-malaria_excel_df = pd.read_excel("malaria_data.xlsx", sheet_name=0)
-
-# Display the first 5 rows
+# Importing pandas (if not already imported)<br>
+import pandas as pd<br>
+<br>
+# Reading the Excel file into a DataFrame<br>
+malaria_excel_df = pd.read_excel("malaria_data.xlsx", sheet_name=0)<br>
+<br>
+# Displaying the first 5 rows of the DataFrame<br>
 malaria_excel_df.head()
                 </code>
             </div>
@@ -816,21 +619,19 @@ malaria_excel_df.head()
             <div class="explanation">
                 <h4>Explanation:</h4>
                 <p>- <code>pd.read_excel()</code> reads Excel files into a DataFrame.<br>
-                - <code>sheet_name=0</code> specifies the first sheet (index 0).</p>
+                - <code>sheet_name=0</code> specifies the first sheet to read.</p>
             </div>
             
             <hr>
             
             <h3>Exercise 3.4: Write Data to CSV and Excel</h3>
-            <div class="python-code">
+            <div class="r-code">
                 <code>
-# Save DataFrame to CSV
-malaria_df.to_csv("processed_malaria_data.csv", index=False)
-
-# Save DataFrame to Excel
+# Writing data to a CSV file<br>
+malaria_df.to_csv("processed_malaria_data.csv", index=False)<br>
+<br>
+# Writing data to an Excel file<br>
 malaria_df.to_excel("processed_malaria_data.xlsx", index=False)
-
-print("Files saved successfully!")
                 </code>
             </div>
             
@@ -838,74 +639,54 @@ print("Files saved successfully!")
                 <h4>Explanation:</h4>
                 <p>- <code>to_csv()</code> saves the DataFrame as a CSV file.<br>
                 - <code>to_excel()</code> saves the DataFrame as an Excel file.<br>
-                - <code>index=False</code> prevents writing row indices as a separate column.</p>
+                - <code>index=False</code> prevents writing row indices to the file.</p>
             </div>
         </div>
         
         <div class="solution-section">
-            <h2 id="sol-bonus">4️⃣ Bonus Challenge: Analyze Malaria Data</h2>
+            <h2 id="sol-bonus">4️⃣ Bonus Challenge: Automate CSV Import</h2>
             
-            <div class="python-code">
+            <div class="r-code">
                 <code>
-# Import pandas
-import pandas as pd
-
-# Read the CSV file
-malaria_df = pd.read_csv("malaria_data.csv")
-
-# Display basic info about the dataset
-print("Dataset information:")
-print(f"Number of rows: {len(malaria_df)}")
-print(f"Columns: {', '.join(malaria_df.columns)}")
-print("\n")
-
-# Calculate summary statistics for cases
-print("Summary statistics for malaria cases:")
-print(f"Mean cases: {malaria_df['Cases'].mean():.1f}")
-print(f"Median cases: {malaria_df['Cases'].median():.1f}")
-print(f"Maximum cases: {malaria_df['Cases'].max()}")
-print(f"Total cases across all regions: {malaria_df['Cases'].sum()}")
-print("\n")
-
-# Create a new column for recovery rate
-malaria_df['Recovery_Rate'] = (malaria_df['Recovered'] / malaria_df['Cases']) * 100
-
-# Display the updated DataFrame
-print("DataFrame with recovery rate:")
-print(malaria_df)
-print("\n")
-
-# Save the enriched dataset
-malaria_df.to_csv("enriched_malaria_data.csv", index=False)
-print("Enriched dataset saved as 'enriched_malaria_data.csv'")
+# Importing pandas<br>
+import pandas as pd<br>
+<br>
+# Asking the user for the file path<br>
+file_path = input("Enter the path to the CSV file: ")<br>
+<br>
+# Reading the dataset from the provided path<br>
+try:<br>
+    malaria_data = pd.read_csv(file_path)<br>
+    <br>
+    # Displaying summary statistics<br>
+    print("Summary Statistics:")<br>
+    print(malaria_data.describe())<br>
+    <br>
+    # Saving the cleaned data to a new CSV file<br>
+    clean_file_path = "cleaned_" + file_path.split("/")[-1]<br>
+    malaria_data.to_csv(clean_file_path, index=False)<br>
+    print(f"Cleaned data saved to {clean_file_path}")<br>
+except FileNotFoundError:<br>
+    print(f"Error: The file {file_path} was not found.")<br>
+except Exception as e:<br>
+    print(f"An error occurred: {e}")
                 </code>
             </div>
             
             <div class="explanation">
                 <h4>Explanation:</h4>
-                <p>- We first read the CSV file into a DataFrame.<br>
-                - We calculate and display basic statistics about the case numbers.<br>
-                - We create a new column 'Recovery_Rate' that shows what percentage of cases recovered.<br>
-                - Finally, we save the enriched dataset with the new column to a CSV file.</p>
+                <p>- <code>input()</code> is used to ask the user for input (file path).<br>
+                - <code>describe()</code> gives the summary statistics of the dataset.<br>
+                - <code>to_csv()</code> saves the DataFrame as a CSV file.<br>
+                - We use <code>try/except</code> blocks for error handling.</p>
             </div>
             
             <h3>💡 Additional Notes:</h3>
-            <p>- For more complex analysis, you might want to use visualization libraries like <code>matplotlib</code> or <code>seaborn</code>.<br>
-            - Python's pandas library offers powerful features for data manipulation like filtering, grouping, and aggregation.<br>
-            - Always check your data quality with methods like <code>info()</code>, <code>describe()</code>, and <code>isnull().sum()</code> before analysis.</p>
+            <p>- Make sure that the paths to the files are correct, and if you're reading from an Excel file, ensure that the <code>pandas</code> and <code>openpyxl</code> libraries are installed.<br>
+            - If you get errors when trying to install packages, make sure you have an active internet connection, and the Python version is up-to-date.</p>
         </div>
     </div>
     
-    <script>
-        // Simple JavaScript for sidebar toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const sidebar = document.getElementById('sidebar');
-            const sidebarToggle = document.getElementById('sidebar-toggle');
-            
-            sidebarToggle.addEventListener('click', function() {
-                sidebar.classList.toggle('closed');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
